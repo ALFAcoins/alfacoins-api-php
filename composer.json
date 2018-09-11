@@ -1,0 +1,15 @@
+{
+    "name": "alfacoins/alfacoins-api-php",
+    "description": "PHP Library for interacting with the ALFAcoins.com API.",
+    "license": "MIT",
+    "autoload": {
+      "psr-4": {
+        "ALFAcoins\\": "src/"
+      }
+    },
+    "require": {
+        "php": ">=5.4",
+        "ext-json": "*",
+        "ext-curl": "*"
+    }
+}
