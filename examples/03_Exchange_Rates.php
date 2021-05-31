@@ -1,8 +1,8 @@
 <?php
 
 // include once ALFAcoins Public API class
-require_once '../src/publicAPI.php';
-require_once '../src/Exception.php';
+require_once '../src/ALFAcoins_publicAPI.php';
+require_once '../src/ALFAcoins_Exception.php';
 
 use ALFAcoins\ALFAcoins_publicAPI;
 use ALFAcoins\ALFAcoins_Exception;

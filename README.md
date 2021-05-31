@@ -33,8 +33,8 @@ Alternatively, if you're not using composer, copy the contents of the alfacoins-
 ```php
 <?php
 // include once ALFAcoins Private API class
-require_once '../src/privateAPI.php';
-require_once '../src/Exception.php';
+require_once '../src/ALFAcoins_privateAPI.php';
+require_once '../src/ALFAcoins_Exception.php';
 use ALFAcoins\ALFAcoins_privateAPI;
 use ALFAcoins\ALFAcoins_Exception;
 ```
