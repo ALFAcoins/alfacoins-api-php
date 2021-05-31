@@ -17,7 +17,7 @@
 alfacoins-api-php is available on [Packagist](https://packagist.org/packages/alfacoins/alfacoins-api-php) (using semantic versioning), and installation via [composer](https://getcomposer.org) is the recommended way to install alfacoins-api-php. Just add this line to your `composer.json` file:
 
 ```json
-"alfacoins/alfacoins-api-php": "~v1.0"
+"alfacoins/alfacoins-api-php": "~v1.1"
 ```
 
 or run
