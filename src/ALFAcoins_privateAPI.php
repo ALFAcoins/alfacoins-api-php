@@ -105,22 +105,24 @@ class ALFAcoins_privateAPI {
     return $result;
   }
 
+  /*
+   * function merchant2_xmlrpc_order_refund($name, $secret_key, $password, $txn_id, $address, $memo, $amount = 0, $new_rate = false)
+   */
   /**
    * Refund completed order
    * @param int $txn_id Order ID for Refund
    * @param int|float $amount Amount for refund. Set 0 for full refund
-   * @param array $options Client cryptocurrency address for deposit, and additional tags
-   *                 i.e. {"address": "1FE7bSYsXSMrdXTCdRUWUB6jGFFba74fzm"} for Bitcoin, Litecoin, Ethereum, Dash
-   *                 {"address": "qFE7bSYsXSMrdXTCdRUWUB6jGFFba74fzm", "legacy_address": "1FE7bSYsXSMrdXTCdRUWUB6jGFFba74fzm"} for Bitcoin Cash
-   *                 {"address": "rExZpwNwwrmFWbX81AqbKJYkq8W6ZoeWE6", "destination_tag": "1294967290"} for XRP
+   * @param string $address Client cryptocurrency address for deposit
+   * @param string|null $memo Client cryptocurrency memo (for XRP and others)
    * @param bool $useNewRate (Optional) Use current time rates for fiat to cryptocurrency conversion or use order's rate
    * @return array
    * @throws ALFAcoins_Exception
    */
-  public function refund($txn_id, $amount = 0, $options, $useNewRate = false) {
+  public function refund($txn_id, $amount = 0, $address, $memo = null, $useNewRate = false) {
     $params = [
       'txn_id' => (int) $txn_id,
-      'options' => $options,
+      'address' => $address,
+      'memo' => $memo,
       'new_rate' => $useNewRate
     ];
     if ($amount != 0) {

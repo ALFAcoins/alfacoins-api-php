@@ -19,16 +19,15 @@ $shop_secret_key = 'a8a0e3497c8b67b024babc9a4daf5f5c';
 // initialize ALFAcoins Private API class with your API settings
 $api = new ALFAcoins_privateAPI($shop_name, $shop_password, $shop_secret_key);
 
-// prepare options for the refund method
-$options = [
-  // address where refund to
-  "address" => "1FE7bSYsXSMrdXTCdRUWUB6jGFFba74fzm",
-];
+// address where refund to
+$address = "TR72hsBngLwseFNRkucLxSh54LJLGLrAgS";
+// address memo
+$memo = null;
 
 // make full refund, more about it - https://www.alfacoins.com/developers#post_requests-refund
 try {
   echo 'Refund result:' . PHP_EOL;
-  var_dump($api->refund(409152, 0, $options, true));
+  var_dump($api->refund(409152, 0, $address, $memo, true));
 } catch (ALFAcoins_Exception $e) {
   echo "Refund method failed: " . $e->getMessage() . PHP_EOL;
 }
@@ -36,7 +35,7 @@ try {
 // partial refund (e.g. 10 USD instead of the full order amount), default currency is set in your settings
 try {
   echo 'Refund result:' . PHP_EOL;
-  var_dump($api->refund(409152, 10, $options, true));
+  var_dump($api->refund(409152, 10, $address, $memo, true));
 } catch (ALFAcoins_Exception $e) {
   echo "Refund method failed: " . $e->getMessage() . PHP_EOL;
 }
